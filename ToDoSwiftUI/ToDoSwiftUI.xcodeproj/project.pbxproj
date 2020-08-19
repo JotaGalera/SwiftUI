@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8902135C24EDC67600304190 /* TasksDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902135B24EDC67600304190 /* TasksDone.swift */; };
 		8939742824EB13A800D7C1A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939742724EB13A800D7C1A6 /* AppDelegate.swift */; };
 		8939742A24EB13A800D7C1A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939742924EB13A800D7C1A6 /* SceneDelegate.swift */; };
 		8939742D24EB13A800D7C1A6 /* ToDoSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8939742B24EB13A800D7C1A6 /* ToDoSwiftUI.xcdatamodeld */; };
@@ -14,10 +15,11 @@
 		8939743124EB13A900D7C1A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8939743024EB13A900D7C1A6 /* Assets.xcassets */; };
 		8939743424EB13A900D7C1A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8939743324EB13A900D7C1A6 /* Preview Assets.xcassets */; };
 		8939743724EB13A900D7C1A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8939743524EB13A900D7C1A6 /* LaunchScreen.storyboard */; };
-		8939743F24EB206B00D7C1A6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939743E24EB206B00D7C1A6 /* File.swift */; };
+		8939743F24EB206B00D7C1A6 /* StyleConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939743E24EB206B00D7C1A6 /* StyleConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8902135B24EDC67600304190 /* TasksDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDone.swift; sourceTree = "<group>"; };
 		8939742424EB13A800D7C1A6 /* ToDoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8939742724EB13A800D7C1A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8939742924EB13A800D7C1A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +29,7 @@
 		8939743324EB13A900D7C1A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8939743624EB13A900D7C1A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8939743824EB13A900D7C1A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8939743E24EB206B00D7C1A6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		8939743E24EB206B00D7C1A6 /* StyleConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +65,13 @@
 				8939742724EB13A800D7C1A6 /* AppDelegate.swift */,
 				8939742924EB13A800D7C1A6 /* SceneDelegate.swift */,
 				8939742E24EB13A800D7C1A6 /* ContentView.swift */,
+				8902135B24EDC67600304190 /* TasksDone.swift */,
 				8939743024EB13A900D7C1A6 /* Assets.xcassets */,
 				8939743524EB13A900D7C1A6 /* LaunchScreen.storyboard */,
 				8939743824EB13A900D7C1A6 /* Info.plist */,
 				8939742B24EB13A800D7C1A6 /* ToDoSwiftUI.xcdatamodeld */,
 				8939743224EB13A900D7C1A6 /* Preview Content */,
-				8939743E24EB206B00D7C1A6 /* File.swift */,
+				8939743E24EB206B00D7C1A6 /* StyleConstant.swift */,
 			);
 			path = ToDoSwiftUI;
 			sourceTree = "<group>";
@@ -152,7 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8939743F24EB206B00D7C1A6 /* File.swift in Sources */,
+				8902135C24EDC67600304190 /* TasksDone.swift in Sources */,
+				8939743F24EB206B00D7C1A6 /* StyleConstant.swift in Sources */,
 				8939742824EB13A800D7C1A6 /* AppDelegate.swift in Sources */,
 				8939742D24EB13A800D7C1A6 /* ToDoSwiftUI.xcdatamodeld in Sources */,
 				8939742F24EB13A800D7C1A6 /* ContentView.swift in Sources */,

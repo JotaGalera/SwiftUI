@@ -32,25 +32,35 @@ struct ContentToDoList: View{
     var body: some View {
         List{
             ForEach(fetchedItems, id: \.self){ item in
-                ContentToDoRow(item: item.taskTitle ?? "Empty")
+                ContentToDoRow(managedObjectContext: self.managedObjectContext, item: item)
             }
             .frame(height: StyleConstant.rowHeight)
             ContentAddTaskRow(managedObjectContext: managedObjectContext , newTaskTitle: $newTaskTitle)
-            ContentTaskDoneRow()
+            NavitageToTaskDone()
         }
     }
 }
 
 struct ContentToDoRow: View {
-    var item: String
+    var managedObjectContext: NSManagedObjectContext
+    var item: ToDoItems
     
     var body: some View{
         HStack{
-            Text(item)
+            Text(String(item.taskTitle ?? "Default"))
             Spacer()
-            Button(action: {print("Task done.")}){
+            Button(action: {self.markTaskAsDone(item: self.item)}){
                 ContentButton()
             }
+        }
+    }
+    
+    func markTaskAsDone(item: ToDoItems){
+        item.taskDone = true
+        do {
+            try self.managedObjectContext.save()
+        }catch{
+            print (error.localizedDescription)
         }
     }
 }
@@ -100,10 +110,12 @@ struct ContentAddTaskRow: View{
     }
 }
 
-struct ContentTaskDoneRow: View {
+struct NavitageToTaskDone: View {
     var body: some View {
-        Text("Tasks done")
-            .frame(height: StyleConstant.rowHeight)
+        NavigationLink(destination: TasksDone()) {
+            Text("Tasks done")
+                .frame(height: StyleConstant.rowHeight)
+        }
     }
 }
 
