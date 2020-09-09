@@ -8,25 +8,16 @@
 
 import SwiftUI
 
-let sampleConversation = [ChatMessage(messageText: "Hello how are you?",
-                                      username: "Me",
-                                      isMe: true),
-                          ChatMessage(messageText: "I'm fine and you?",
-                                      username: "Another user",
-                                      isMe: false),
-                          ChatMessage(messageText: "I'm fine as well.Thanks for asking. What are you doing right now?",
-                                      username: "Me",
-                                      isMe: true)]
-
 struct ChatScreen: View {
     
     @State var newMessageInput = ""
     @ObservedObject var keyboardResponder = KeyboardResponder()
+    @ObservedObject var chatController: ChatController
     
     var body: some View {
         NavigationView {
             VStack{
-                ForEach(sampleConversation, id: \.messageID){
+                ForEach(chatController.messages, id: \.messageID){
                     message in
                     ChatRow(message: message)
                 }
@@ -39,14 +30,26 @@ struct ChatScreen: View {
                     .stroke(lightGreyColor, lineWidth: 2)
                     .padding()
                     HStack {
-                        TextField("New message...", text: $newMessageInput, onCommit: {print("Send message")})
+                        TextField("New message...", text: $newMessageInput, onCommit: {
+                            guard !self.newMessageInput.isEmpty else {
+                                print("Message is empty")
+                                return
+                            }
+                            self.chatController.sendMessage(messageText: self.newMessageInput)
+                            self.newMessageInput = ""
+                        })
                             .padding(30)
                         Button(action: {
-                            print("Send message")
+                            guard !self.newMessageInput.isEmpty else {
+                                print ("Message is empty")
+                                return
+                            }
+                            self.chatController.sendMessage(messageText: self.newMessageInput)
+                            self.newMessageInput = ""
                         }) {
                             Image(systemName: "paperplane")
                                 .imageScale(.large)
-                            .padding(30)
+                                .padding(30)
                         }
                     }
                 }
@@ -60,6 +63,6 @@ struct ChatScreen: View {
 
 struct ChatScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChatScreen()
+        ChatScreen(chatController: ChatController())
     }
 }

@@ -37,6 +37,6 @@ struct ChatRow: View {
 
 struct ChatRow_Previews: PreviewProvider {
     static var previews: some View {
-        ChatRow(message: sampleConversation[2])
+        ChatRow(message: ChatMessage(messageText: "Hello", username: "Not me"))
     }
 }

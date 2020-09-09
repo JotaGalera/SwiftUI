@@ -14,9 +14,14 @@ class ChatMessage{
     let isMe: Bool
     let messageID = UUID()
     
-    init(messageText: String, username: String, isMe: Bool){
+    init(messageText: String, username: String){
         self.messageText = messageText
         self.username = username
-        self.isMe = isMe
+        
+        if UserDefaults.standard.string(forKey: "username") == username {
+            self.isMe = true
+        } else {
+            self.isMe = false
+        }
     }
 }
